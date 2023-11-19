@@ -1,0 +1,16 @@
+body{
+    margin: 5%;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#amount{
+    height:25px;
+    border-radius: 10px;
+}
+
+button{
+    height:30px;
+    border-radius: 10px;
+    background-color: #00C4CC;
+    color: #FFFFFF;
+}

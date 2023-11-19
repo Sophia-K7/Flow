@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Flow Infrared Scanner</title>
+  <link rel="icon" type="image/x-icon" href="Flow Logo.png">
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<!--here's some proof of concept code in JavaScript, to demonstrate in a web-based form how the infrared scanner might work-->
+
+<body> 
+    <form id="InfraredScanner">
+        <label for="Enter percentage amount" style="color: #000000;"><h3>Enter percentage amount</h3></label>
+        <input type="number" id="amount" name="microorganism-amount" placeholder="Enter amount" required="" min="0.0" max="100.0" step="any">
+        <button type="submit">Submit</button>
+        <br>
+        <label for="results" style="color: #000000;"><h3>Results</h3></label>
+        <output id="result" name="result" for="fromUnit toUnit" style="color: #000000;">Scan water sample…</output>
+    </form>
+    <script>
+        
+
+    document.getElementById('InfraredScanner').addEventListener('submit', function(e) {
+      e.preventDefault();
+      calculate();
+    });
+
+    function calculate() {
+      const amount = document.getElementById("amount").value;
+     
+      if (!isNaN(amount)) { 
+            if(amount>25){
+                document.getElementById("result").innerHTML = `This water is not safe to drink`;
+            }
+            else{
+                document.getElementById("result").innerHTML = `This water is safe to drink`;
+            }
+        
+        } else {
+          document.getElementById("result").innerHTML = "Error";
+        }
+    };
+    </script>
+</body>
+
+</html>
